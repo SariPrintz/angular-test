@@ -1,0 +1,9 @@
+
+<ul class="list-group-item"> {{item.Title}}</ul>
+<ul class="list-group-item"> {{item.Type}}</ul>
+<ul class="list-group-item"> {{item.imdbID}}</ul>
+<input type="text" name="name" [(ngModel)]="item.Title" />
+<button (click)="onSubmit()">Submit</button>
+<ul class="list-group-item">{{getDate(item.Year)}}</ul>
+<img src=  {{item.Poster|safeUrl}} *ngIf ="(item.Poster|safeUrl)!==null " >
+

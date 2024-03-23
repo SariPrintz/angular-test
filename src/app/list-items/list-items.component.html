@@ -1,0 +1,16 @@
+<ul *ngFor ="let key of getGroupedListItemsKeys()" class="list-group">
+    <li class="list-group-item" >
+      <button (click)="toggleItems(key)">
+        {{key}}
+      </button>
+      {{getCountList(key) }} total
+      <div *ngIf="showItems[key]">
+        <ul *ngFor="let item of groupedListItems[key]" class="list-group-item list-group-item-secondary  trackBy: trackByItem">
+          <li >
+         <button  (click)="itemSelected.emit(item);selectedItem = null;toggleItem(item)"> {{item.Title}}</button></li>
+        </ul>
+      </div>     
+    </li>
+  </ul>
+  <app-item-details *ngIf="selectedItem" [item]="selectedItem" ></app-item-details>
+  

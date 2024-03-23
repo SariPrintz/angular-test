@@ -1,0 +1,16 @@
+<div class="container">
+    <div class="row row-cols-3">
+      <div class="col" *ngFor="let item of listItems">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">{{ item.Title }}</h5>
+            <p class="card-text">
+              {{ item.Year | date: 'dd/MM/yyyy'}} <br>
+            </p>
+          </div>
+          <button (click)="Router(item)">Details</button>
+            <img src="{{ item.Poster }}" class="card-img-top" >
+                  </div>
+      </div>
+    </div>
+  </div>
